@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FBFB80811E2ED405001F87C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFB80801E2ED405001F87C7 /* AppDelegate.swift */; };
+		FBFB80831E2ED405001F87C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFB80821E2ED405001F87C7 /* ViewController.swift */; };
+		FBFB80861E2ED405001F87C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBFB80841E2ED405001F87C7 /* Main.storyboard */; };
+		FBFB80881E2ED405001F87C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBFB80871E2ED405001F87C7 /* Assets.xcassets */; };
+		FBFB808B1E2ED405001F87C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBFB80891E2ED405001F87C7 /* LaunchScreen.storyboard */; };
+		FBFB80961E2ED405001F87C7 /* PlacemanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFB80951E2ED405001F87C7 /* PlacemanTests.swift */; };
+		FBFB80A11E2ED405001F87C7 /* PlacemanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFB80A01E2ED405001F87C7 /* PlacemanUITests.swift */; };
+		FBFB80AF1E2ED52C001F87C7 /* PlaceDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFB80AE1E2ED52C001F87C7 /* PlaceDescription.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FBFB80921E2ED405001F87C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBFB80751E2ED404001F87C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBFB807C1E2ED404001F87C7;
+			remoteInfo = Placeman;
+		};
+		FBFB809D1E2ED405001F87C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBFB80751E2ED404001F87C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBFB807C1E2ED404001F87C7;
+			remoteInfo = Placeman;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FBFB807D1E2ED405001F87C7 /* Placeman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Placeman.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBFB80801E2ED405001F87C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FBFB80821E2ED405001F87C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FBFB80851E2ED405001F87C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FBFB80871E2ED405001F87C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FBFB808A1E2ED405001F87C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FBFB808C1E2ED405001F87C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBFB80911E2ED405001F87C7 /* PlacemanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlacemanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBFB80951E2ED405001F87C7 /* PlacemanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemanTests.swift; sourceTree = "<group>"; };
+		FBFB80971E2ED405001F87C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBFB809C1E2ED405001F87C7 /* PlacemanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlacemanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBFB80A01E2ED405001F87C7 /* PlacemanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemanUITests.swift; sourceTree = "<group>"; };
+		FBFB80A21E2ED405001F87C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBFB80AE1E2ED52C001F87C7 /* PlaceDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDescription.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBFB807A1E2ED404001F87C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBFB808E1E2ED405001F87C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBFB80991E2ED405001F87C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FBFB80741E2ED404001F87C7 = {
+			isa = PBXGroup;
+			children = (
+				FBFB807F1E2ED405001F87C7 /* Placeman */,
+				FBFB80941E2ED405001F87C7 /* PlacemanTests */,
+				FBFB809F1E2ED405001F87C7 /* PlacemanUITests */,
+				FBFB807E1E2ED405001F87C7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FBFB807E1E2ED405001F87C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBFB807D1E2ED405001F87C7 /* Placeman.app */,
+				FBFB80911E2ED405001F87C7 /* PlacemanTests.xctest */,
+				FBFB809C1E2ED405001F87C7 /* PlacemanUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBFB807F1E2ED405001F87C7 /* Placeman */ = {
+			isa = PBXGroup;
+			children = (
+				FBFB80801E2ED405001F87C7 /* AppDelegate.swift */,
+				FBFB80821E2ED405001F87C7 /* ViewController.swift */,
+				FBFB80841E2ED405001F87C7 /* Main.storyboard */,
+				FBFB80871E2ED405001F87C7 /* Assets.xcassets */,
+				FBFB80891E2ED405001F87C7 /* LaunchScreen.storyboard */,
+				FBFB808C1E2ED405001F87C7 /* Info.plist */,
+				FBFB80AE1E2ED52C001F87C7 /* PlaceDescription.swift */,
+			);
+			path = Placeman;
+			sourceTree = "<group>";
+		};
+		FBFB80941E2ED405001F87C7 /* PlacemanTests */ = {
+			isa = PBXGroup;
+			children = (
+				FBFB80951E2ED405001F87C7 /* PlacemanTests.swift */,
+				FBFB80971E2ED405001F87C7 /* Info.plist */,
+			);
+			path = PlacemanTests;
+			sourceTree = "<group>";
+		};
+		FBFB809F1E2ED405001F87C7 /* PlacemanUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FBFB80A01E2ED405001F87C7 /* PlacemanUITests.swift */,
+				FBFB80A21E2ED405001F87C7 /* Info.plist */,
+			);
+			path = PlacemanUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBFB807C1E2ED404001F87C7 /* Placeman */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBFB80A51E2ED405001F87C7 /* Build configuration list for PBXNativeTarget "Placeman" */;
+			buildPhases = (
+				FBFB80791E2ED404001F87C7 /* Sources */,
+				FBFB807A1E2ED404001F87C7 /* Frameworks */,
+				FBFB807B1E2ED404001F87C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Placeman;
+			productName = Placeman;
+			productReference = FBFB807D1E2ED405001F87C7 /* Placeman.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FBFB80901E2ED405001F87C7 /* PlacemanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBFB80A81E2ED405001F87C7 /* Build configuration list for PBXNativeTarget "PlacemanTests" */;
+			buildPhases = (
+				FBFB808D1E2ED405001F87C7 /* Sources */,
+				FBFB808E1E2ED405001F87C7 /* Frameworks */,
+				FBFB808F1E2ED405001F87C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBFB80931E2ED405001F87C7 /* PBXTargetDependency */,
+			);
+			name = PlacemanTests;
+			productName = PlacemanTests;
+			productReference = FBFB80911E2ED405001F87C7 /* PlacemanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FBFB809B1E2ED405001F87C7 /* PlacemanUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBFB80AB1E2ED405001F87C7 /* Build configuration list for PBXNativeTarget "PlacemanUITests" */;
+			buildPhases = (
+				FBFB80981E2ED405001F87C7 /* Sources */,
+				FBFB80991E2ED405001F87C7 /* Frameworks */,
+				FBFB809A1E2ED405001F87C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBFB809E1E2ED405001F87C7 /* PBXTargetDependency */,
+			);
+			name = PlacemanUITests;
+			productName = PlacemanUITests;
+			productReference = FBFB809C1E2ED405001F87C7 /* PlacemanUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FBFB80751E2ED404001F87C7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = mrathwa;
+				TargetAttributes = {
+					FBFB807C1E2ED404001F87C7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					FBFB80901E2ED405001F87C7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FBFB807C1E2ED404001F87C7;
+					};
+					FBFB809B1E2ED405001F87C7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FBFB807C1E2ED404001F87C7;
+					};
+				};
+			};
+			buildConfigurationList = FBFB80781E2ED404001F87C7 /* Build configuration list for PBXProject "Placeman" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FBFB80741E2ED404001F87C7;
+			productRefGroup = FBFB807E1E2ED405001F87C7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBFB807C1E2ED404001F87C7 /* Placeman */,
+				FBFB80901E2ED405001F87C7 /* PlacemanTests */,
+				FBFB809B1E2ED405001F87C7 /* PlacemanUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FBFB807B1E2ED404001F87C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBFB808B1E2ED405001F87C7 /* LaunchScreen.storyboard in Resources */,
+				FBFB80881E2ED405001F87C7 /* Assets.xcassets in Resources */,
+				FBFB80861E2ED405001F87C7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBFB808F1E2ED405001F87C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBFB809A1E2ED405001F87C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FBFB80791E2ED404001F87C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBFB80831E2ED405001F87C7 /* ViewController.swift in Sources */,
+				FBFB80AF1E2ED52C001F87C7 /* PlaceDescription.swift in Sources */,
+				FBFB80811E2ED405001F87C7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBFB808D1E2ED405001F87C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBFB80961E2ED405001F87C7 /* PlacemanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBFB80981E2ED405001F87C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBFB80A11E2ED405001F87C7 /* PlacemanUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FBFB80931E2ED405001F87C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBFB807C1E2ED404001F87C7 /* Placeman */;
+			targetProxy = FBFB80921E2ED405001F87C7 /* PBXContainerItemProxy */;
+		};
+		FBFB809E1E2ED405001F87C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBFB807C1E2ED404001F87C7 /* Placeman */;
+			targetProxy = FBFB809D1E2ED405001F87C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FBFB80841E2ED405001F87C7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBFB80851E2ED405001F87C7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FBFB80891E2ED405001F87C7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBFB808A1E2ED405001F87C7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FBFB80A31E2ED405001F87C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FBFB80A41E2ED405001F87C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FBFB80A61E2ED405001F87C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Placeman/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.asu.msse.mrathwa.Placeman;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FBFB80A71E2ED405001F87C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Placeman/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.asu.msse.mrathwa.Placeman;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		FBFB80A91E2ED405001F87C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PlacemanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.asu.msse.mrathwa.PlacemanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Placeman.app/Placeman";
+			};
+			name = Debug;
+		};
+		FBFB80AA1E2ED405001F87C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PlacemanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.asu.msse.mrathwa.PlacemanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Placeman.app/Placeman";
+			};
+			name = Release;
+		};
+		FBFB80AC1E2ED405001F87C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = PlacemanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.asu.msse.mrathwa.PlacemanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Placeman;
+			};
+			name = Debug;
+		};
+		FBFB80AD1E2ED405001F87C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = PlacemanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.asu.msse.mrathwa.PlacemanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Placeman;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FBFB80781E2ED404001F87C7 /* Build configuration list for PBXProject "Placeman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBFB80A31E2ED405001F87C7 /* Debug */,
+				FBFB80A41E2ED405001F87C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBFB80A51E2ED405001F87C7 /* Build configuration list for PBXNativeTarget "Placeman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBFB80A61E2ED405001F87C7 /* Debug */,
+				FBFB80A71E2ED405001F87C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FBFB80A81E2ED405001F87C7 /* Build configuration list for PBXNativeTarget "PlacemanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBFB80A91E2ED405001F87C7 /* Debug */,
+				FBFB80AA1E2ED405001F87C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FBFB80AB1E2ED405001F87C7 /* Build configuration list for PBXNativeTarget "PlacemanUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBFB80AC1E2ED405001F87C7 /* Debug */,
+				FBFB80AD1E2ED405001F87C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FBFB80751E2ED404001F87C7 /* Project object */;
+}
