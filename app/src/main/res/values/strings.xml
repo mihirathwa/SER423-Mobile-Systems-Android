@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidLife</string>
+    <string name="MA_buttonText">Click Here!</string>
+    <string name="MA_textViewText">Hello, Human!</string>
+</resources>
