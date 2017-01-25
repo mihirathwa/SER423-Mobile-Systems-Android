@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 public class AlertActivity extends AppCompatActivity {
@@ -12,20 +13,12 @@ public class AlertActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alert);
-
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-        alertDialog.setMessage("Hello Android Developer");
-        alertDialog.setNeutralButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                finish();
-            }
-        });
-
-        AlertDialog showAlert = alertDialog.create();
-        showAlert.show();
     }
 
+    /*
+    This method is invoked when the user presses the Home button when the Alert Activity is
+    in foreground and the launches the app again by clicking the app icon
+     */
     @Override
     protected void onRestart() {
         super.onRestart();
@@ -35,7 +28,7 @@ public class AlertActivity extends AppCompatActivity {
 
     /*
     This method is invoked when the user lands on this Activity by clicking the button
-    from the last activity
+    from the last activity or when the user clicks the app when this activity is in foreground
      */
     @Override
     protected void onStart() {
@@ -46,7 +39,7 @@ public class AlertActivity extends AppCompatActivity {
 
     /*
     This method is invoked when the user lands on this Activity by clicking the button
-    from the last activity, invoked after onStart()
+    from the last activity or when the user clicks the app when activity is in foreground
      */
     @Override
     protected void onResume() {
@@ -56,7 +49,8 @@ public class AlertActivity extends AppCompatActivity {
     }
 
     /*
-    This method is invoked when the user clicks OK on the alert dialog box
+    This method is invoked when the user clicks OK on the alert dialog box or when
+    the home button is clicked when the user clicks Home Button on Emulator
      */
     @Override
     protected void onPause() {
@@ -66,7 +60,8 @@ public class AlertActivity extends AppCompatActivity {
     }
 
     /*
-    This activity is invoked after clicking OK on dialog box
+    This activity is invoked after clicking OK on dialog box or when the user clicks the
+    Home Button on Emulator or when the user clicks Power Button of phone
      */
     @Override
     protected void onStop() {
@@ -76,13 +71,16 @@ public class AlertActivity extends AppCompatActivity {
     }
 
     /*
-    This activity is invoked after clicking OK on dialog box, will
-    come after onStop()
+    This activity is invoked after clicking OK on dialog box
      */
     @Override
     protected void onDestroy() {
         super.onDestroy();
 
         android.util.Log.w(this.getClass().getSimpleName(), "onDestroy");
+    }
+
+    public void AA_btnOK_onClick(View view) {
+        finish();
     }
 }

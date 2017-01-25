@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">AndroidLife</string>
     <string name="MA_buttonText">Click Here!</string>
-    <string name="MA_textViewText">Hello, Human!</string>
+    <string name="MA_textViewText">Main Screen</string>
+    <string name="AA_tvText">Hello, Android Developer</string>
 </resources>

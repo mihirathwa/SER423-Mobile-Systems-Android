@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     /*
     This method is invoked when the user clicks OK in the alert dialog box
-    in the Alert Activity, will be invoked after onPause() of same activity.
+    in the Alert Activity
+    Or when the app is launched again via Home Screen from the Nexus5 Emulator
      */
     @Override
     protected void onRestart() {
@@ -30,8 +31,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /*
-    This method is invoked after the onRestart() when user returns from Alert
-    Activity.
+    This method is invoked when the user clicks OK in the alert dialog box
+    in the Alert Activity
+    Or when the app is launched again via Home Screen from the Nexus5 Emulator
      */
     @Override
     protected void onStart() {
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     /*
     This method will be invoked when user clicks the button "Click Here!"
+    or when the Home button is clicked for Nexus5 Emulator
     */
     @Override
     protected void onPause() {
@@ -51,8 +54,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /*
-    This method is invoked when the user clicks the button "Click Here!"
-     */
+    This method will be invoked when user clicks the button "Click Here!"
+    or when the Home button is clicked for Nexus5 Emulator or when the
+    Phone lock button is clicked on Phone
+    */
     @Override
     protected void onStop() {
         super.onStop();
@@ -60,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
         android.util.Log.w(this.getClass().getSimpleName(), "onStop");
     }
 
+    /*
+    This method will be invoked when the user has the first screen in foreground
+    and kills the app by swiping off the app from recent activity view in Android Emulator
+    Clicking the multi-view hard button on Emulator and swiping the app left or right
+    will invoke the below method
+     */
     @Override
     protected void onDestroy() {
         super.onDestroy();
