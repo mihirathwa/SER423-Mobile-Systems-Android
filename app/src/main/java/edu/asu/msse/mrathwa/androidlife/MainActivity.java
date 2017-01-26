@@ -83,9 +83,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /*
-    This method will be invoked when the user has the first screen in foreground
-    and kills the app by swiping off the app from recent activity view in Android Emulator
-    Clicking the multi-view hard button on Emulator and swiping the app left or right
+    This method will be invoked when the user has keeps first screen and presses the home button
+     making the app in background and kills the app by swiping off the app from recent activity
+     view in Android Emulator
+     Clicking the multi-view hard button on Emulator and swiping the app left or right
     will invoke the below method
      */
     @Override
