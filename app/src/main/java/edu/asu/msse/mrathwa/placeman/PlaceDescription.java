@@ -30,8 +30,17 @@ public class PlaceDescription {
     private double elevation;
     private double latitude;
     private double longitude;
+    private String image;
 
-    public PlaceDescription(String name, String description, String category, String address_title, String address_street, double elevation, double latitude, double longitude) {
+    public PlaceDescription(String name,
+                            String description,
+                            String category,
+                            String address_title,
+                            String address_street,
+                            double elevation,
+                            double latitude,
+                            double longitude,
+                            String image) {
         this.name = name;
         this.description = description;
         this.category = category;
@@ -40,6 +49,7 @@ public class PlaceDescription {
         this.elevation = elevation;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.image = image;
     }
 
     public String getName() {
@@ -104,5 +114,13 @@ public class PlaceDescription {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
