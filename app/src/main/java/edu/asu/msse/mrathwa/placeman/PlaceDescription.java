@@ -17,11 +17,13 @@ package edu.asu.msse.mrathwa.placeman;
  * @version January 16, 2017
  */
 
+import java.io.Serializable;
+
 /**
  * Created by Mihir on 01/16/2017.
  */
 
-public class PlaceDescription {
+public class PlaceDescription implements Serializable{
     private String name;
     private String description;
     private String category;

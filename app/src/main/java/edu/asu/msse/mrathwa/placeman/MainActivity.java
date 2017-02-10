@@ -17,6 +17,7 @@ package edu.asu.msse.mrathwa.placeman;
  * @version January 16, 2017
  */
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -24,6 +25,8 @@ import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
@@ -31,6 +34,7 @@ import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -51,9 +55,10 @@ public class MainActivity extends AppCompatActivity {
 
     private PlaceLibrary placeLibrary;
 
-    ExpandableListView expandableListView;
-    ExpandableListAdapter placeListAdapter;
+    private ExpandableListView expandableListView;
+    private ExpandableListAdapter placeListAdapter;
 
+    private HashMap<String, PlaceDescription> placesCatalogue;
     private List<String> categories;
     private Map<String, List<String>> placesofEachCategory;
     private Context context;
@@ -67,24 +72,67 @@ public class MainActivity extends AppCompatActivity {
         expandableListView = (ExpandableListView) findViewById(R.id.AM_elvPlaces);
 
         placeLibrary = new PlaceLibrary(this);
-        parseLibraryData();
+        parseLibraryData(placeLibrary);
 
+        makeExapandableListView();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1) {
+            if (resultCode == Activity.RESULT_OK) {
+                placeLibrary = (PlaceLibrary) data.getSerializableExtra("placeLibrary");
+
+                Log.w("MA", "onActivityResult");
+
+                parseLibraryData(placeLibrary);
+                makeExapandableListView();
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.action_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int actionId = item.getItemId();
+
+        if (actionId == R.id.action_add) {
+            Intent intent = new Intent(context, EditPlaceActivity.class);
+            intent.putExtra("placeLibrary", placeLibrary);
+            intent.putExtra("callingActivity", "AddActivity");
+            startActivityForResult(intent, 1);
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    protected void makeExapandableListView () {
         placeListAdapter = new MyExpandableListAdapter(this, categories, placesofEachCategory);
         expandableListView.setAdapter(placeListAdapter);
 
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
+                String placeName = placesofEachCategory.get(categories.get(i)).get(i1);
+
                 Intent intent = new Intent(context, EditPlaceActivity.class);
-                intent.putExtra("placeName", placesofEachCategory.get(categories.get(i)).get(i1));
-                startActivity(intent);
+                intent.putExtra("placeLibrary", placeLibrary);
+                intent.putExtra("placeName", placeName);
+                intent.putExtra("callingActivity", "MainActivity");
+                startActivityForResult(intent, 1);
                 return false;
             }
         });
     }
 
-    public void parseLibraryData () {
-        HashMap<String, PlaceDescription> placesCatalogue = placeLibrary.getPlacesCatalogue();
+    public void parseLibraryData (PlaceLibrary placeLibrary) {
+        placesCatalogue = placeLibrary.getPlacesCatalogue();
         PlaceDescription placeObject;
         HashSet<String> compileCategories = new HashSet<>();
 

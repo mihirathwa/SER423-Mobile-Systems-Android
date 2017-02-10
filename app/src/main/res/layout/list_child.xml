@@ -6,7 +6,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="2dp"
         android:layout_gravity="center"
+        android:background="@color/colorScrollView"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/LC_tvChild"/>
 
 </LinearLayout>
