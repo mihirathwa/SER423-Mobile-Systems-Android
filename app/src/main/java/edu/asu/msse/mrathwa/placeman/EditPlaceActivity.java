@@ -1,7 +1,24 @@
 package edu.asu.msse.mrathwa.placeman;
 
+/*
+ * Copyright 2017 Mihir Rathwa,
+ *
+ * This license provides the instructor Dr. Tim Lindquist and Arizona
+ * State University the right to build and evaluate the package for the
+ * purpose of determining grade and program assessment.
+ *
+ * Purpose: This class contains the description for each Place with
+ * ability to Add a place, edit it or remove it
+ * for Assignment 3
+ *
+ * Ser423 Mobile Applications
+ * see http://pooh.poly.asu.edu/Mobile
+ * @author Mihir Rathwa Mihir.Rathwa@asu.edu
+ *         Software Engineering, CIDSE, ASU Poly
+ * @version February 08, 2017
+ */
+
 import android.app.Activity;
-import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -15,10 +32,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -170,61 +186,76 @@ public class EditPlaceActivity extends AppCompatActivity {
     }
 
     public void AEP_SaveOnClick(View view) {
+        boolean validated = true;
 
         if (etName.getText().toString().trim().equals("")){
             etName.setError("Name required");
+            validated = false;
         }
 
         if (etDescription.getText().toString().trim().equals("")){
             etDescription.setError("Description required");
+            validated = false;
         }
 
         if (etCategory.getText().toString().trim().equals("")){
             etCategory.setError("Category required");
+            validated = false;
         }
 
         if (etAddressTitle.getText().toString().trim().equals("")){
             etAddressTitle.setError("Address Title required");
+            validated = false;
         }
 
         if (etAddressStreet.getText().toString().trim().equals("")){
             etAddressStreet.setError("Address Street required");
+            validated = false;
         }
 
         if (etElevation.getText().toString().trim().equals("")){
             etElevation.setError("Elevation required");
+            validated = false;
         }
 
         if (etLatitude.getText().toString().trim().equals("")){
             etLatitude.setError("Latitude required");
+            validated = false;
         }
 
         if (etLongitude.getText().toString().trim().equals("")){
             etLongitude.setError("Longitude required");
+            validated = false;
         }
 
         if (etImage.getText().toString().trim().equals("")){
             etImage.setError("Image required");
+            validated = false;
         }
 
-        PlaceDescription placeDescription =
-                new PlaceDescription(etName.getText().toString(),
-                etDescription.getText().toString(),
-                etCategory.getText().toString(),
-                etAddressTitle.getText().toString(),
-                etAddressStreet.getText().toString(),
-                Double.parseDouble(etElevation.getText().toString()),
-                Double.parseDouble(etLatitude.getText().toString()),
-                Double.parseDouble(etLongitude.getText().toString()),
-                etImage.getText().toString());
+        if (validated) {
+            PlaceDescription placeDescription =
+                    new PlaceDescription(etName.getText().toString(),
+                            etDescription.getText().toString(),
+                            etCategory.getText().toString(),
+                            etAddressTitle.getText().toString(),
+                            etAddressStreet.getText().toString(),
+                            Double.parseDouble(etElevation.getText().toString()),
+                            Double.parseDouble(etLatitude.getText().toString()),
+                            Double.parseDouble(etLongitude.getText().toString()),
+                            etImage.getText().toString());
 
-        placeLibrary.addJSONObject(placeDescription);
+            placeLibrary.addJSONObject(placeDescription);
 
-        Intent intent = new Intent();
-        intent.putExtra("placeLibrary", placeLibrary);
-        setResult(Activity.RESULT_OK, intent);
-        Log.w("EPA", "addJSONObject");
-        finish();
+            Intent intent = new Intent();
+            intent.putExtra("placeLibrary", placeLibrary);
+            setResult(Activity.RESULT_OK, intent);
+            Log.w("EPA", "addJSONObject");
+            finish();
+        }
+        else {
+            Toast.makeText(this, "Enter all the fields!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void AEP_RemoveOnClick(View view) {

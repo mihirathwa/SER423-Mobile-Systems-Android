@@ -7,21 +7,19 @@ package edu.asu.msse.mrathwa.placeman;
  * State University the right to build and evaluate the package for the
  * purpose of determining grade and program assessment.
  *
- * Purpose: This class contains the connection between Place Description and UI layout
- * in Assignment 1
+ * Purpose: This class lists all places as per category using Expandable ListView
+ * for Assignment 3
  *
  * Ser423 Mobile Applications
  * see http://pooh.poly.asu.edu/Mobile
  * @author Mihir Rathwa Mihir.Rathwa@asu.edu
  *         Software Engineering, CIDSE, ASU Poly
- * @version January 16, 2017
+ * @version February 08, 2017
  */
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,19 +28,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
-import android.widget.TextView;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.w3c.dom.Text;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;

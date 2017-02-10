@@ -1,9 +1,26 @@
 package edu.asu.msse.mrathwa.placeman;
 
+/*
+ * Copyright 2017 Mihir Rathwa,
+ *
+ * This license provides the instructor Dr. Tim Lindquist and Arizona
+ * State University the right to build and evaluate the package for the
+ * purpose of determining grade and program assessment.
+ *
+ * Purpose: This class is the PlaceLibrary class
+ * which initialized using a static JSON file
+ * for Assignment 3
+ *
+ * Ser423 Mobile Applications
+ * see http://pooh.poly.asu.edu/Mobile
+ * @author Mihir Rathwa Mihir.Rathwa@asu.edu
+ *         Software Engineering, CIDSE, ASU Poly
+ * @version February 08, 2017
+ */
+
 import android.content.Context;
 import android.content.res.Resources;
 import android.util.Log;
-import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
