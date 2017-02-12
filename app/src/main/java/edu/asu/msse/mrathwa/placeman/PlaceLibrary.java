@@ -148,7 +148,7 @@ public class PlaceLibrary implements Serializable{
         double deltaPhi = Math.toRadians(secondLatitude - firstLatitude);
         double deltaLambda = Math.toRadians(secondLongitude - firstLongitude);
 
-        double a = Math.cos(deltaPhi/2)
+        double a = Math.sin(deltaPhi/2)
                 * Math.sin(deltaPhi/2)
                 + Math.cos(phi1)
                 * Math.cos(phi2)
