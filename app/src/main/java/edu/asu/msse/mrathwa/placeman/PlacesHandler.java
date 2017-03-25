@@ -1,5 +1,27 @@
 package edu.asu.msse.mrathwa.placeman;
 
+/*
+ * Copyright 2017 Mihir Rathwa,
+ *
+ * This license provides the instructor Dr. Tim Lindquist and Arizona
+ * State University the right to build and evaluate the package for the
+ * purpose of determining grade and program assessment.
+ *
+ * Purpose: This class contains the description for each Place with
+ * ability to Add a place, edit it or remove it
+ * for Assignment 3
+ *
+ * Ser423 Mobile Applications
+ * see http://pooh.poly.asu.edu/Mobile
+ * @author Mihir Rathwa Mihir.Rathwa@asu.edu
+ *         Software Engineering, CIDSE, ASU Poly
+ * @version March 23, 2017
+ */
+
+/**
+ * Created by Mihir on 03/23/2017.
+ */
+
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -25,10 +47,6 @@ import java.util.Map;
 
 
 import static java.lang.Math.pow;
-
-/**
- * Created by Mihir on 03/23/2017.
- */
 
 public class PlacesHandler implements AsyncTaskResponseListener {
 
@@ -130,7 +148,7 @@ public class PlacesHandler implements AsyncTaskResponseListener {
                             secondLongitude);
 
                     distance.setText("Distance:                 " + Double.toString(greatCircle)
-                            + "\nIntial bearing:    " + Double.toString(initialBearing));
+                            + "\nInitial bearing:    " + Double.toString(initialBearing));
                 }
 
                 callingPurpose = "setEditPlaceUI";
@@ -138,14 +156,16 @@ public class PlacesHandler implements AsyncTaskResponseListener {
                 break;
 
             case "add":
-                Log.w(TAG, "place should be added");
+                Log.w(TAG, "Place added");
+                Intent addIntent = new Intent(context, MainActivity.class);
+                context.startActivity(addIntent);
+
                 break;
 
             case "remove":
-                Log.w(TAG, "place removed");
-                Intent intent = new Intent();
-
-
+                Log.w(TAG, "Place removed");
+                Intent removeIntent = new Intent(context, MainActivity.class);
+                context.startActivity(removeIntent);
 
                 break;
 
@@ -216,7 +236,7 @@ public class PlacesHandler implements AsyncTaskResponseListener {
 
         PlaceRequestHandler placeRequest = new PlaceRequestHandler(context,
                 "add",
-                new String[]{jsonObject.toString()});
+                new Object[]{jsonObject});
 
         AsyncTaskHandler callAsyncTask = new AsyncTaskHandler("add", this);
         callAsyncTask.execute(placeRequest);

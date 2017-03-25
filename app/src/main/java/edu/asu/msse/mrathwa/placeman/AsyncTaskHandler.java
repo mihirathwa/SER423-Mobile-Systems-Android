@@ -1,5 +1,28 @@
 package edu.asu.msse.mrathwa.placeman;
 
+/*
+ * Copyright 2017 Mihir Rathwa,
+ *
+ * This license provides the instructor Dr. Tim Lindquist and Arizona
+ * State University the right to build and evaluate the package for the
+ * purpose of determining grade and program assessment.
+ *
+ * Purpose: This class contains the description for each Place with
+ * ability to Add a place, edit it or remove it
+ * for Assignment 3
+ *
+ * Ser423 Mobile Applications
+ * see http://pooh.poly.asu.edu/Mobile
+ * @author Mihir Rathwa Mihir.Rathwa@asu.edu
+ *         Software Engineering, CIDSE, ASU Poly
+ * @version March 23, 2017
+ */
+
+/**
+ * Created by Mihir on 03/23/2017.
+ */
+
+import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -12,10 +35,6 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.zip.GZIPInputStream;
-
-/**
- * Created by Mihir on 03/23/2017.
- */
 
 public class AsyncTaskHandler extends AsyncTask<PlaceRequestHandler, Integer, String>{
 
@@ -43,7 +62,9 @@ public class AsyncTaskHandler extends AsyncTask<PlaceRequestHandler, Integer, St
         try {
             //URL demoURL = new URL("http://10.0.2.2:8080"); //Android Emulator
             //URL demoURL = new URL("http://192.168.42.149:8080"); //My External Android device
-            String stringURL = placeRequestHandlers[0].getContext().getString(R.string.default_url);
+
+            Context context = placeRequestHandlers[0].getContext();
+            String stringURL = context.getString(R.string.device_url);
             URL serverURL = new URL(stringURL);
 
             HttpURLConnection conn = (HttpURLConnection) serverURL.openConnection();

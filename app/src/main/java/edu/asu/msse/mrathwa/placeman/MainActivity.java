@@ -29,6 +29,7 @@ import android.widget.ExpandableListView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String TAG = getClass().getSimpleName();
     private ExpandableListView expandableListView;
     private Context context;
 
@@ -37,12 +38,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Log.w(TAG, "onCreate");
         context = this;
         expandableListView = (ExpandableListView) findViewById(R.id.AM_elvPlaces);
 
         PlacesHandler placesHandler = new PlacesHandler(this);
         placesHandler.getAllCategories();
         placesHandler.setMainActivityUITags(expandableListView);
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        Log.w(TAG, "onRestart");
     }
 
     @Override

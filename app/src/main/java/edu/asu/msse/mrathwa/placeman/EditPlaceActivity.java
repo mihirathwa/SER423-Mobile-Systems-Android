@@ -208,13 +208,8 @@ public class EditPlaceActivity extends AppCompatActivity {
                     Double.parseDouble(placeLongitude),
                     placeImage);
 
+            placesHandler = new PlacesHandler(this);
             placesHandler.addPlace(newPlace);
-
-            //Intent intent = new Intent();
-            //intent.putExtra("placeLibrary", placeLibrary);
-            //setResult(Activity.RESULT_OK, intent);
-            //Log.w("EPA", "addJSONObject");
-            //finish();
         }
         else {
             Toast.makeText(this, "Enter all the fields!", Toast.LENGTH_SHORT).show();
@@ -224,10 +219,5 @@ public class EditPlaceActivity extends AppCompatActivity {
     public void AEP_RemoveOnClick(View view) {
         placesHandler = new PlacesHandler(this);
         placesHandler.removePlace(placeName);
-
-        Intent intent = new Intent();
-        setResult(RESULT_OK, intent);
-        Log.w("EPA", "removeJSONObject");
-        finish();
     }
 }
