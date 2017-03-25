@@ -9,7 +9,7 @@ package edu.asu.msse.mrathwa.placeman;
  *
  * Purpose: This class contains the description for each Place with
  * ability to Add a place, edit it or remove it
- * for Assignment 3
+ * for Assignment 5
  *
  * Ser423 Mobile Applications
  * see http://pooh.poly.asu.edu/Mobile

@@ -7,9 +7,11 @@ package edu.asu.msse.mrathwa.placeman;
  * State University the right to build and evaluate the package for the
  * purpose of determining grade and program assessment.
  *
- * Purpose: This class contains the description for each Place with
- * ability to Add a place, edit it or remove it
- * for Assignment 3
+ * Purpose: This class contains the handles:
+ * 1. server method invokation via AsycTaskHandler.java
+ * 2. manipulating server response
+ * 3. setting relevent UI adapters for MainActivity and EditPlaceActivity
+ * for Assignment 5
  *
  * Ser423 Mobile Applications
  * see http://pooh.poly.asu.edu/Mobile
@@ -170,12 +172,15 @@ public class PlacesHandler implements AsyncTaskResponseListener {
                 break;
 
             case "saveToJsonFile":
+                Log.w(TAG, "Saved to Server JSON File");
                 break;
 
             case "resetFromJsonFile":
+                Log.w(TAG, "Data Reset from Server JSON File");
                 break;
 
             default:
+                Log.w(TAG, "Invalid Calling Method");
                 break;
         }
 

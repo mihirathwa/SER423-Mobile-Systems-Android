@@ -9,7 +9,7 @@ package edu.asu.msse.mrathwa.placeman;
  *
  * Purpose: This class is the adapter for Expandable List View
  * that implements BaseExpandableListAdapter class
- * for Assignment 3
+ * for Assignment 5
  *
  * Ser423 Mobile Applications
  * see http://pooh.poly.asu.edu/Mobile

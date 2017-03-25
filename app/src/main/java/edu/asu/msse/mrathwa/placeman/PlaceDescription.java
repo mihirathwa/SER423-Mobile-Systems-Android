@@ -8,7 +8,7 @@ package edu.asu.msse.mrathwa.placeman;
  * purpose of determining grade and program assessment.
  *
  * Purpose: This class contains description about the place as described
- * in Assignment 1
+ * in Assignment 5
  *
  * Ser423 Mobile Applications
  * see http://pooh.poly.asu.edu/Mobile

@@ -7,9 +7,9 @@ package edu.asu.msse.mrathwa.placeman;
  * State University the right to build and evaluate the package for the
  * purpose of determining grade and program assessment.
  *
- * Purpose: This class contains the description for each Place with
- * ability to Add a place, edit it or remove it
- * for Assignment 3
+ * Purpose: This interface is to delegate the response from the Async task
+ * to other class
+ * for Assignment 5
  *
  * Ser423 Mobile Applications
  * see http://pooh.poly.asu.edu/Mobile

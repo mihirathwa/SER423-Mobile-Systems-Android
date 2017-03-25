@@ -8,7 +8,7 @@ package edu.asu.msse.mrathwa.placeman;
  * purpose of determining grade and program assessment.
  *
  * Purpose: This class lists all places as per category using Expandable ListView
- * for Assignment 3
+ * for Assignment 5
  *
  * Ser423 Mobile Applications
  * see http://pooh.poly.asu.edu/Mobile
@@ -25,12 +25,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.ProgressBar;
 
 public class MainActivity extends AppCompatActivity {
 
     private String TAG = getClass().getSimpleName();
     private ExpandableListView expandableListView;
+    public ProgressBar mainActivityProgressBar;
     private Context context;
 
     @Override

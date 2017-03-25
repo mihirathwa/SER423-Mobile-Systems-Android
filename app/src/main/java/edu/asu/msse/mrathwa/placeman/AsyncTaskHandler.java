@@ -7,9 +7,9 @@ package edu.asu.msse.mrathwa.placeman;
  * State University the right to build and evaluate the package for the
  * purpose of determining grade and program assessment.
  *
- * Purpose: This class contains the description for each Place with
- * ability to Add a place, edit it or remove it
- * for Assignment 3
+ * Purpose: This class connects to Server using Async Task over Http
+ * and gets the generated response
+ * for Assignment 5
  *
  * Ser423 Mobile Applications
  * see http://pooh.poly.asu.edu/Mobile
@@ -60,11 +60,11 @@ public class AsyncTaskHandler extends AsyncTask<PlaceRequestHandler, Integer, St
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
 
         try {
-            //URL demoURL = new URL("http://10.0.2.2:8080"); //Android Emulator
-            //URL demoURL = new URL("http://192.168.42.149:8080"); //My External Android device
+            //URL defaultURL = new URL("http://10.0.2.2:8080"); //Android Emulator
+            //URL deviceURL = new URL("http://192.168.42.149:8080"); //My External Android device
 
             Context context = placeRequestHandlers[0].getContext();
-            String stringURL = context.getString(R.string.device_url);
+            String stringURL = context.getString(R.string.default_url);
             URL serverURL = new URL(stringURL);
 
             HttpURLConnection conn = (HttpURLConnection) serverURL.openConnection();
