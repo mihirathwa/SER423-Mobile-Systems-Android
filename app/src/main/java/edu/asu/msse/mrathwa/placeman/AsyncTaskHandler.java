@@ -64,7 +64,7 @@ public class AsyncTaskHandler extends AsyncTask<PlaceRequestHandler, Integer, St
             //URL deviceURL = new URL("http://192.168.42.149:8080"); //My External Android device
 
             Context context = placeRequestHandlers[0].getContext();
-            String stringURL = context.getString(R.string.default_url);
+            String stringURL = context.getString(R.string.device_url);
             URL serverURL = new URL(stringURL);
 
             HttpURLConnection conn = (HttpURLConnection) serverURL.openConnection();
