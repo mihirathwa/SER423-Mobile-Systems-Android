@@ -53,8 +53,6 @@ public class EditPlaceActivity extends AppCompatActivity {
     private EditText etLongitude;
     private EditText etImage;
 
-    private PlacesHandler placesHandler;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,22 +68,8 @@ public class EditPlaceActivity extends AppCompatActivity {
         if (callingActivity.equals("MainActivity")) {
 
             placeName = intent.getStringExtra("placeName");
-            placesHandler = new PlacesHandler(this);
-            placesHandler.getPlaceDescription(placeName);
-            placesHandler.getAllPlaces();
 
-            placesHandler.setEditPlaceUITags(etName,
-                    etDescription,
-                    etCategory,
-                    etAddressTitle,
-                    etAddressStreet,
-                    etElevation,
-                    etLatitude,
-                    etLongitude,
-                    etImage,
-                    spinPlaces,
-                    distance,
-                    btnRemove);
+            //Insert Code to Get a description of a new place
         }
         else {
 
@@ -208,8 +192,7 @@ public class EditPlaceActivity extends AppCompatActivity {
                     Double.parseDouble(placeLongitude),
                     placeImage);
 
-            placesHandler = new PlacesHandler(this);
-            placesHandler.addPlace(newPlace);
+            //Insert code to Add a Place
         }
         else {
             Toast.makeText(this, "Enter all the fields!", Toast.LENGTH_SHORT).show();
@@ -217,7 +200,6 @@ public class EditPlaceActivity extends AppCompatActivity {
     }
 
     public void AEP_RemoveOnClick(View view) {
-        placesHandler = new PlacesHandler(this);
-        placesHandler.removePlace(placeName);
+        //Insert Code for Remove Place
     }
 }

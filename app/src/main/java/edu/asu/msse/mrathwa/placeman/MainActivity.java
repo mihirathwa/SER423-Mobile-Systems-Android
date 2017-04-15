@@ -20,6 +20,8 @@ package edu.asu.msse.mrathwa.placeman;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,6 +30,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.ProgressBar;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,9 +49,26 @@ public class MainActivity extends AppCompatActivity {
         context = this;
         expandableListView = (ExpandableListView) findViewById(R.id.AM_elvPlaces);
 
-        PlacesHandler placesHandler = new PlacesHandler(this);
-        placesHandler.getAllCategories();
-        placesHandler.setMainActivityUITags(expandableListView);
+        //Insert Code to set the Categories List
+        callDatabase();
+    }
+
+    protected void callDatabase() {
+        PlaceDescriptionDB db = new PlaceDescriptionDB(this);
+        SQLiteDatabase dbCursor = db.openDB();
+
+        Cursor cursor = dbCursor.rawQuery("select name from placeDescriptions;", new String[]{});
+        ArrayList<String> listPlaces = new ArrayList<String>();
+
+        while(cursor.moveToNext()) {
+            try {
+                listPlaces.add(cursor.getString(0));
+                Log.w(TAG, cursor.getString(0));
+            } catch (Exception e) {
+                Log.w(TAG, "Exception Stepping through Cursor" + e.getMessage());
+            }
+        }
+
     }
 
     @Override
@@ -63,9 +84,7 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == Activity.RESULT_OK) {
                 Log.w("MA", "onActivityResult");
 
-                PlacesHandler placesHandler = new PlacesHandler(this);
-                placesHandler.getAllCategories();
-                placesHandler.setMainActivityUITags(expandableListView);
+                //Insert Code to updating the category list
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
