@@ -13,6 +13,23 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+/*
+ * Copyright 2017 Mihir Rathwa,
+ *
+ * This license provides the instructor Dr. Tim Lindquist and Arizona
+ * State University the right to build and evaluate the package for the
+ * purpose of determining grade and program assessment.
+ *
+ * Purpose: This class handles all database calls with initialization from raw database file
+ * for Assignment 7
+ *
+ * Ser423 Mobile Applications
+ * see http://pooh.poly.asu.edu/Mobile
+ * @author Mihir Rathwa Mihir.Rathwa@asu.edu
+ *         Software Engineering, CIDSE, ASU Poly
+ * @version April 14, 2017
+ */
+
 /**
  * Created by Mihir on 04/14/2017.
  */
@@ -74,7 +91,7 @@ public class PlaceDescriptionDB extends SQLiteOpenHelper {
                         debug("PlaceDB:: CheckDB", "Check for PlaceDescription Table " +
                                 "result set is " +
                                 (tabCheck.isAfterLast() ?
-                                        "Empty" : (String) tabCheck.getString(0)));
+                                        "Empty" : tabCheck.getString(0)));
                         cursorTabExists = !tabCheck.isAfterLast();
                     }
 
@@ -88,7 +105,7 @@ public class PlaceDescriptionDB extends SQLiteOpenHelper {
                             int cursorID = tableCursor.getInt(1);
 
                             debug("PlaceDB:: CheckDB", "Place Table has TableName: " +
-                                    cursorName + "\tCourseID: " + cursorID);
+                                    cursorName);
                             tableCursor.moveToNext();
                         }
 

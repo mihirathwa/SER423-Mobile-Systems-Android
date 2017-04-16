@@ -8,13 +8,13 @@ package edu.asu.msse.mrathwa.placeman;
  * purpose of determining grade and program assessment.
  *
  * Purpose: This class lists all places as per category using Expandable ListView
- * for Assignment 5
+ * for Assignment 7
  *
  * Ser423 Mobile Applications
  * see http://pooh.poly.asu.edu/Mobile
  * @author Mihir Rathwa Mihir.Rathwa@asu.edu
  *         Software Engineering, CIDSE, ASU Poly
- * @version February 08, 2017
+ * @version April 16, 2017
  */
 
 import android.app.Activity;
@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
     private Map<String, List<String>> placesofEachCategory;
     private Context context;
 
+    PlaceDescriptionDB db;
+    SQLiteDatabase dbCursor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,14 +62,13 @@ public class MainActivity extends AppCompatActivity {
         categories = new ArrayList<String>();
         placesofEachCategory = new HashMap<>();
 
-        //Insert Code to set the Categories List
+        db = new PlaceDescriptionDB(this);
+        dbCursor = db.openDB();
+
         makeExpandableListView();
     }
 
     protected void makeExpandableListView() {
-        PlaceDescriptionDB db = new PlaceDescriptionDB(this);
-        SQLiteDatabase dbCursor = db.openDB();
-
         Cursor categoriesCursor = dbCursor.rawQuery("select distinct category from placeDescriptions;", new String[]{});
         categories = new ArrayList<String>();
 
@@ -121,9 +123,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1) {
             if (resultCode == Activity.RESULT_OK) {
-                Log.w("MA", "onActivityResult");
+                Log.w(TAG, "onActivityResult");
 
-                //Insert Code to updating the category list
+                makeExpandableListView();
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
