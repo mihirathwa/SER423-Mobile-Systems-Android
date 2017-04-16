@@ -22,7 +22,7 @@ public class PlaceDescriptionDB extends SQLiteOpenHelper {
 
     private static final boolean debugon = false;
     private static final int DATABASE_VERSION = 3;
-    private static String dbName = "placeDB";
+    private static String dbName = "placedb";
     private String dbPath;
     private SQLiteDatabase cursorDB;
     private final Context context;
@@ -51,7 +51,7 @@ public class PlaceDescriptionDB extends SQLiteOpenHelper {
 
         try {
             String path = dbPath + dbName + ".db";
-            debug("PlaceDB:: checkDB", "Opened DB at: " + checkDB.getPath());
+            debug("PlaceDB:: checkDB", "Opened DB at: " + path);
 
             File aFile = new File(path);
 

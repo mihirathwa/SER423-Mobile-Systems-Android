@@ -28,16 +28,23 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ProgressBar;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
     private String TAG = getClass().getSimpleName();
     private ExpandableListView expandableListView;
-    public ProgressBar mainActivityProgressBar;
+    private ExpandableListAdapter expandableListAdapter;
+
+    private List<String> categories;
+    private Map<String, List<String>> placesofEachCategory;
     private Context context;
 
     @Override
@@ -49,26 +56,58 @@ public class MainActivity extends AppCompatActivity {
         context = this;
         expandableListView = (ExpandableListView) findViewById(R.id.AM_elvPlaces);
 
+        categories = new ArrayList<String>();
+        placesofEachCategory = new HashMap<>();
+
         //Insert Code to set the Categories List
-        callDatabase();
+        makeExpandableListView();
     }
 
-    protected void callDatabase() {
+    protected void makeExpandableListView() {
         PlaceDescriptionDB db = new PlaceDescriptionDB(this);
         SQLiteDatabase dbCursor = db.openDB();
 
-        Cursor cursor = dbCursor.rawQuery("select name from placeDescriptions;", new String[]{});
-        ArrayList<String> listPlaces = new ArrayList<String>();
+        Cursor categoriesCursor = dbCursor.rawQuery("select distinct category from placeDescriptions;", new String[]{});
+        categories = new ArrayList<String>();
 
-        while(cursor.moveToNext()) {
+        while(categoriesCursor.moveToNext()) {
             try {
-                listPlaces.add(cursor.getString(0));
-                Log.w(TAG, cursor.getString(0));
+                categories.add(categoriesCursor.getString(0));
             } catch (Exception e) {
-                Log.w(TAG, "Exception Stepping through Cursor" + e.getMessage());
+                Log.w(TAG, "Exception while getting categories from database" + e.getMessage());
             }
         }
 
+        for(String s: categories) {
+            Cursor placesCursor = dbCursor.rawQuery("select name from placeDescriptions where category like '" + s + "';", new String[]{});
+            List<String> placesOfCategory = new ArrayList<String>();
+
+            while(placesCursor.moveToNext()) {
+                try {
+                    placesOfCategory.add(placesCursor.getString(0));
+                } catch (Exception e) {
+                    Log.w(TAG, "Exception while getting places for a category from database" + e.getMessage());
+                }
+            }
+
+            placesofEachCategory.put(s, placesOfCategory);
+        }
+
+        expandableListAdapter = new MyExpandableListAdapter(this, categories, placesofEachCategory);
+        expandableListView.setAdapter(expandableListAdapter);
+
+        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
+                String selectedPlace = placesofEachCategory.get(categories.get(i)).get(i1);
+
+                Intent intent = new Intent(context, EditPlaceActivity.class);
+                intent.putExtra("placeName", selectedPlace);
+                intent.putExtra("callingActivity", "MainActivity");
+                startActivityForResult(intent, 1);
+                return false;
+            }
+        });
     }
 
     @Override
