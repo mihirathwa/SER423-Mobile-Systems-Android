@@ -92,7 +92,7 @@ public class EditPlaceActivity extends AppCompatActivity {
         Intent intent = getIntent();
         callingActivity = intent.getStringExtra("callingActivity");
 
-        if (callingActivity.equals("MainActivity")) {
+        if (callingActivity.equals("MapsActivity")) {
 
             placeName = intent.getStringExtra("placeName");
 
@@ -300,7 +300,7 @@ public class EditPlaceActivity extends AppCompatActivity {
             String placeLongitude = etLongitude.getText().toString();
             String placeImage = etImage.getText().toString();
 
-            if (callingActivity.equals("MainActivity")) {
+            if (callingActivity.equals("MapsActivity")) {
                 String deleteCommand = "delete from placeDescriptions where name like '"
                         + placeName + "';";
 
