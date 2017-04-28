@@ -220,19 +220,26 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onClick(DialogInterface dialogInterface, int i) {
         if (i == DialogInterface.BUTTON_POSITIVE) {
             if (dialogCallBox == "add") {
+
                 String newPlaceName = dialogEditText.getText().toString();
-                Double newLatitude = newPoint.latitude;
-                Double newLongitude = newPoint.longitude;
 
-                gMap.addMarker(new MarkerOptions()
-                        .position(newPoint)
-                        .title(newPlaceName)
-                        .snippet("Long Press to Edit"));
+                if (!newPlaceName.trim().equals("")) {
+                    Double newLatitude = newPoint.latitude;
+                    Double newLongitude = newPoint.longitude;
 
-                String insertCommand = "insert into placeDescriptions (name, latitude, longitude) values ('"
-                        + newPlaceName + "', " + newLatitude + ", " + newLongitude + ");";
+                    gMap.addMarker(new MarkerOptions()
+                            .position(newPoint)
+                            .title(newPlaceName)
+                            .snippet("Long Press to Edit"));
 
-                dbCursor.execSQL(insertCommand);
+                    String insertCommand = "insert into placeDescriptions (name, latitude, longitude) values ('"
+                            + newPlaceName + "', " + newLatitude + ", " + newLongitude + ");";
+
+                    dbCursor.execSQL(insertCommand);
+                }
+                else {
+                    Toast.makeText(this, "Name Required", Toast.LENGTH_SHORT).show();
+                }
             }
             else if (dialogCallBox == "edit") {
                 Intent intent = new Intent(context, EditPlaceActivity.class);
